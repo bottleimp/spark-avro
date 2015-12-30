@@ -15,7 +15,7 @@ matrix:
     - jdk: openjdk7
       scala: 2.10.4
       env: TEST_HADOOP_VERSION="2.2.0" TEST_SPARK_VERSION="1.4.1"
-    # Spark 1.5.0 and Scala 2.10
+    # Spark 1.5.2 and Scala 2.10
     # These two cases will fail in Travis until SPARK-10330 is fixed.
     # - jdk: openjdk7
     #   scala: 2.10.4
@@ -25,11 +25,11 @@ matrix:
     #   env: TEST_HADOOP_VERSION="1.2.1" TEST_SPARK_VERSION="1.5.0-rc2"
     - jdk: openjdk7
       scala: 2.10.4
-      env: TEST_HADOOP_VERSION="2.2.0" TEST_SPARK_VERSION="1.5.0-rc2"
-    # Spark 1.5.0 and Scala 2.11
+      env: TEST_HADOOP_VERSION="2.2.0" TEST_SPARK_VERSION="1.5.2"
+    # Spark 1.5.2 and Scala 2.11
     - jdk: openjdk7
       scala: 2.11.7
-      env: TEST_HADOOP_VERSION="2.2.0" TEST_SPARK_VERSION="1.5.0-rc2"
+      env: TEST_HADOOP_VERSION="2.2.0" TEST_SPARK_VERSION="1.5.2"
 script:
   - sbt -Dhadoop.testVersion=$TEST_HADOOP_VERSION -Dspark.testVersion=$TEST_SPARK_VERSION ++$TRAVIS_SCALA_VERSION coverage test
   - sbt ++$TRAVIS_SCALA_VERSION scalastyle
